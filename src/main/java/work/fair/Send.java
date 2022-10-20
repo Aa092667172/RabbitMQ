@@ -17,7 +17,7 @@ public class Send {
         ConnectionFactory factory = new ConnectionFactory();
         factory.setHost("127.0.0.1");
         factory.setUsername("sa");
-        factory.setVirtualHost("sa");
+        factory.setVirtualHost("/sa");
         factory.setPassword("12345");
         factory.setPort(5672);
 

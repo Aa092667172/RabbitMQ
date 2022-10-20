@@ -17,7 +17,7 @@ public class Send {
         ConnectionFactory factory = new ConnectionFactory();
         factory.setHost("127.0.0.1");
         factory.setUsername("sa");
-        factory.setVirtualHost("sa");
+        factory.setVirtualHost("/sa");
         factory.setPassword("12345");
         factory.setPort(5672);
 
@@ -25,6 +25,7 @@ public class Send {
             Channel channel = connection.createChannel()){
             channel.queueDeclare(QUEUE_NAME,false,false,false,null);
             String message = "hello world";
+            //exchange 第一參數 交換機名稱  不輸入 預設使用default交換機 並把queueName當成routingKey
             channel.basicPublish("",QUEUE_NAME,null,message.getBytes(StandardCharsets.UTF_8));
             System.out.printf("[x] Sent '%s'",message);
         }

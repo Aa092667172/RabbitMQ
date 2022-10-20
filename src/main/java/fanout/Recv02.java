@@ -1,4 +1,4 @@
-package exchanges;
+package fanout;
 
 import com.rabbitmq.client.*;
 
@@ -6,14 +6,14 @@ import com.rabbitmq.client.*;
  * 發布/訂閱 消息消費者
  */
 public class Recv02 {
-    private final static String EXCHANGE_NAME = "test";
+    private final static String EXCHANGE_NAME = "exchange_fanout";
 
     public static void main(String[] args) throws Exception {
         //創建連接工廠
         ConnectionFactory factory = new ConnectionFactory();
         factory.setHost("127.0.0.1");
         factory.setUsername("sa");
-        factory.setVirtualHost("sa");
+        factory.setVirtualHost("/sa");
         factory.setPassword("12345");
         factory.setPort(5672);
 

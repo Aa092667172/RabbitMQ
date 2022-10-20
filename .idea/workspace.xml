@@ -4,27 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="081a68b5-895e-4d79-8a13-35b12c6f35d1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exchanges/Recv01.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exchanges/Recv02.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exchanges/Send.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/simple/recv/Recv.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/simple/send/Send.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/work/fair/Recv01.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/work/fair/Recv02.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/work/fair/Send.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/work/test/Recv01.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/work/test/Recv02.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/work/test/Send.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/AppTest.java" afterDir="false" />
+    <list default="true" id="081a68b5-895e-4d79-8a13-35b12c6f35d1" name="Changes" comment="學習  mq 工作輪詢 發布者訂閱者 簡單發布 使用方式">
+      <change afterPath="$PROJECT_DIR$/src/main/java/direct/Recv01.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/direct/Recv02.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/direct/Send.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exchanges/Recv01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fanout/Recv01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exchanges/Recv02.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fanout/Recv02.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exchanges/Send.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fanout/Send.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/simple/recv/Recv.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simple/recv/Recv.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/simple/send/Send.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simple/send/Send.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/work/fair/Recv01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/work/fair/Recv01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/work/fair/Recv02.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/work/fair/Recv02.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/work/fair/Send.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/work/fair/Send.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/work/test/Recv01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/work/test/Recv01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/work/test/Recv02.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/work/test/Recv02.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/work/test/Send.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/work/test/Send.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +36,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/simple/recv/Recv.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -56,7 +54,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/linyukai/Desktop/idea/rabbitMQ/src/main/java/exchanges",
+    "last_opened_file_path": "/Users/linyukai/Desktop/idea/rabbitMQ/src/main/java/topic",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -65,24 +63,26 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/topic" />
+      <recent name="$PROJECT_DIR$/src/main/java/direct" />
       <recent name="$PROJECT_DIR$/src/main/java/exchanges" />
       <recent name="$PROJECT_DIR$/src/main/java/work/test" />
       <recent name="$PROJECT_DIR$/src/main/java/work/fair" />
-      <recent name="$PROJECT_DIR$/src/main/java/work" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="direct" />
       <recent name="exchanges" />
       <recent name="work.test" />
       <recent name="work.recv" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.exchanges.Send">
+  <component name="RunManager" selected="Application.topic.Send">
     <configuration name="Recv01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="exchanges.Recv01" />
+      <option name="MAIN_CLASS_NAME" value="topic.Recv01" />
       <module name="rabbitMQ" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="exchanges.*" />
+          <option name="PATTERN" value="topic.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -90,12 +90,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Send" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="work.fair.Send" />
+    <configuration name="Recv02" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="topic.Recv02" />
       <module name="rabbitMQ" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="work.fair.*" />
+          <option name="PATTERN" value="topic.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -103,12 +103,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="exchanges.Recv02" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="exchanges.Recv02" />
+    <configuration name="fanout.Recv02" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="fanout.Recv02" />
       <module name="rabbitMQ" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="exchanges.*" />
+          <option name="PATTERN" value="fanout.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -116,12 +116,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="exchanges.Send" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="exchanges.Send" />
+    <configuration name="fanout.Send" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="fanout.Send" />
       <module name="rabbitMQ" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="exchanges.*" />
+          <option name="PATTERN" value="fanout.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -129,12 +129,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="work.fair.Recv01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="work.fair.Recv01" />
+    <configuration name="topic.Send" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="topic.Send" />
       <module name="rabbitMQ" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="work.fair.*" />
+          <option name="PATTERN" value="topic.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -144,11 +144,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.exchanges.Send" />
-        <item itemvalue="Application.exchanges.Recv02" />
+        <item itemvalue="Application.topic.Send" />
+        <item itemvalue="Application.Recv02" />
         <item itemvalue="Application.Recv01" />
-        <item itemvalue="Application.Send" />
-        <item itemvalue="Application.work.fair.Recv01" />
+        <item itemvalue="Application.fanout.Send" />
+        <item itemvalue="Application.fanout.Recv02" />
       </list>
     </recent_temporary>
   </component>
@@ -160,8 +160,31 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1665923794089</updated>
-      <workItem from="1665923795440" duration="9718000" />
+      <workItem from="1665923795440" duration="10674000" />
+      <workItem from="1666272285353" duration="4743000" />
     </task>
+    <task id="LOCAL-00001" summary="學習  mq 工作輪詢 發布者訂閱者 簡單發布 使用方式">
+      <created>1665934844209</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1665934844209</updated>
+    </task>
+    <task id="LOCAL-00002" summary="學習  mq 工作輪詢 發布者訂閱者 簡單發布 使用方式">
+      <created>1665934921751</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1665934921751</updated>
+    </task>
+    <task id="LOCAL-00003" summary="學習  mq 工作輪詢 發布者訂閱者 簡單發布 使用方式">
+      <created>1665934953657</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1665934953657</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,5 +200,19 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="學習  mq 工作輪詢 發布者訂閱者 簡單發布 使用方式" />
+    <option name="LAST_COMMIT_MESSAGE" value="學習  mq 工作輪詢 發布者訂閱者 簡單發布 使用方式" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.io.IOException" package="java.io" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

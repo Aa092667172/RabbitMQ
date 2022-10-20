@@ -1,15 +1,12 @@
-package simple.recv;
+package direct;
 
-import com.rabbitmq.client.Channel;
-import com.rabbitmq.client.Connection;
-import com.rabbitmq.client.ConnectionFactory;
-import com.rabbitmq.client.DeliverCallback;
+import com.rabbitmq.client.*;
 
 /**
- * 消費者 預設為內存或磁碟大小
+ * 路由 消息消費者
  */
-public class Recv {
-    private final static String QUEUE_NAME = "hello";
+public class Recv02 {
+    private final static String EXCHANGE_NAME = "exchange_direct";
 
     public static void main(String[] args) throws Exception {
         //創建連接工廠
@@ -22,14 +19,18 @@ public class Recv {
 
         Connection connection = factory.newConnection();
         Channel channel = connection.createChannel();
-        channel.queueDeclare(QUEUE_NAME, false, false, false, null);
+        //綁定交換機
+        channel.exchangeDeclare(EXCHANGE_NAME, BuiltinExchangeType.DIRECT);
+        //獲取隊列
+        String queueName = channel.queueDeclare().getQueue();
+        channel.queueBind(queueName,EXCHANGE_NAME,Send.WARING_ROUTING_KEY);
         System.out.println("[*] Waiting for messages.");
         DeliverCallback deliverCallback = (consumerTag, delivery) -> {
             String message = new String(delivery.getBody(), "UTF-8");
-            System.out.printf("[x] Received :%s", message);
+            System.out.printf("[x] 消費者收到消息 :%s",message);
+            System.out.println();
         };
-        //autoAck:自動回值
-        channel.basicConsume(QUEUE_NAME, true, deliverCallback, consumerTag -> {
+        channel.basicConsume(queueName, true, deliverCallback, consumerTag -> {
         });
     }
 }

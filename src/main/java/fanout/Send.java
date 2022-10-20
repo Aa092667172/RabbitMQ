@@ -1,4 +1,4 @@
-package exchanges;
+package fanout;
 
 import com.rabbitmq.client.BuiltinExchangeType;
 import com.rabbitmq.client.Channel;
@@ -8,10 +8,10 @@ import com.rabbitmq.client.ConnectionFactory;
 import java.nio.charset.StandardCharsets;
 
 /**
- * 工作輪詢: 設定處理完才能接受下一條 能者多勞
+ * 訂閱者/發布者
  */
 public class Send {
-    private final static String EXCHANGE_NAME = "test";
+    private final static String EXCHANGE_NAME = "exchange_fanout";
 
 
     public static void main(String[] args) throws Exception {
@@ -19,7 +19,7 @@ public class Send {
         ConnectionFactory factory = new ConnectionFactory();
         factory.setHost("127.0.0.1");
         factory.setUsername("sa");
-        factory.setVirtualHost("sa");
+        factory.setVirtualHost("/sa");
         factory.setPassword("12345");
         factory.setPort(5672);
 
